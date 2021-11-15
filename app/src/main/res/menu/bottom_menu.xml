@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu"
+        android:id="@+id/main"
         android:title="@string/about"
         android:enabled="true"
         android:icon="@drawable/about"/>
@@ -9,4 +9,9 @@
         android:id="@+id/care"
         android:title="@string/care"
         android:icon="@drawable/care"/>
+    <item
+        android:id="@+id/catalog"
+        android:title="@string/catalog"
+        android:icon="@drawable/catalog"/>
+
 </menu>

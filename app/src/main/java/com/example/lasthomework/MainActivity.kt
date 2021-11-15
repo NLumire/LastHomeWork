@@ -9,29 +9,37 @@ private const val LAST_SELECTED_ITEM = "Item"
 
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var bottomMenu: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        bottomMenu = findViewById(R.id.bottom_menu)
 
+
+
+        bottomMenu = findViewById(R.id.bottom_menu)
         bottomMenu.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.menu -> {
-                    val menuFragment = MainFragment()
-                    replaceFragment(menuFragment)
+                R.id.main -> {
+                    val mainFragment = MainFragment()
+                    replaceFragment(mainFragment)
                 }
 
                 R.id.care -> {
-                    val aboutFragment = CareFragment()
-                    replaceFragment(aboutFragment)
+                    val careFragment = CareFragment()
+                    replaceFragment(careFragment)
+                }
+                R.id.catalog -> {
+                    val catalogFragment = PlantListFragment()
+                    replaceFragment(catalogFragment)
+
                 }
             }
 
             true
         }
-        bottomMenu.selectedItemId = savedInstanceState?.getInt(LAST_SELECTED_ITEM) ?: R.id.menu
+        bottomMenu.selectedItemId = savedInstanceState?.getInt(LAST_SELECTED_ITEM) ?: R.id.main
     }
 
     private fun replaceFragment(fragment: Fragment) {

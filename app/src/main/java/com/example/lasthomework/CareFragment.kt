@@ -23,6 +23,7 @@ class CareFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_care, container, false)
+
         careText = view.findViewById(R.id.care_text)
 
         careText.setText(
